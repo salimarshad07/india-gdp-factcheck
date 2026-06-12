@@ -1,0 +1,16 @@
+country,iso_code,economy_type,region,imf_weo_apr2026_rate,data_type,fiscal_period
+India,IND,Emerging,South Asia,6.20,forecast,CY2026
+Malaysia,MYS,Emerging,Southeast Asia,4.00,forecast,CY2026
+Indonesia,IDN,Emerging,Southeast Asia,4.70,forecast,CY2026
+China,CHN,Emerging,East Asia,4.20,forecast,CY2026
+Thailand,THA,Emerging,Southeast Asia,2.10,forecast,CY2026
+United States,USA,Advanced,North America,1.80,forecast,CY2026
+Brazil,BRA,Emerging,South America,2.00,forecast,CY2026
+South Korea,KOR,Advanced,East Asia,1.00,forecast,CY2026
+United Kingdom,GBR,Advanced,Europe,0.80,forecast,CY2026
+Canada,CAN,Advanced,North America,1.40,forecast,CY2026
+France,FRA,Advanced,Europe,0.60,forecast,CY2026
+Mexico,MEX,Emerging,North America,0.30,forecast,CY2026
+Japan,JPN,Advanced,East Asia,0.60,forecast,CY2026
+Italy,ITA,Advanced,Europe,0.40,forecast,CY2026
+South Africa,ZAF,Emerging,Africa,1.50,forecast,CY2026

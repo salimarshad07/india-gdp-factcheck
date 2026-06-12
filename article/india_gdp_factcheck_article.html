@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fact Check: Is India Really Growing at 7.7%? | The Data Desk</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0D0D0D;
+    --paper: #F7F4EF;
+    --accent: #C41E1E;
+    --orange: #FF6600;
+    --blue: #2166AC;
+    --grey: #888888;
+    --muted: #5A5A5A;
+    --rule: #D0CCC4;
+    --highlight: #FFF3CD;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  /* HEADER */
+  .masthead {
+    border-bottom: 3px solid var(--ink);
+    padding: 16px 0 12px;
+    text-align: center;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .masthead-pub {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 4px;
+  }
+
+  .masthead-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+  }
+
+  .masthead-name span { color: var(--accent); }
+
+  .masthead-tagline {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  /* ARTICLE WRAPPER */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* LABEL */
+  .label {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    margin-bottom: 16px;
+  }
+
+  /* HEADLINE */
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* DECK */
+  .deck {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    margin-bottom: 28px;
+  }
+
+  /* BYLINE */
+  .byline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 32px;
+  }
+
+  .byline strong { color: var(--ink); }
+
+  /* BODY TEXT */
+  p { margin-bottom: 22px; }
+
+  /* SECTION HEADS */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 44px 0 16px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+
+  h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 32px 0 10px;
+  }
+
+  /* VIRAL BOX */
+  .viral-box {
+    background: #0D1B3E;
+    color: white;
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin: 32px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .viral-box::before {
+    content: "VIRAL CLAIM";
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .viral-box .viral-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #FF6600;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .viral-box .viral-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .viral-box .viral-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 12px;
+  }
+
+  /* VERDICT BOX */
+  .verdict {
+    background: var(--highlight);
+    border-left: 4px solid #F0A500;
+    padding: 20px 24px;
+    margin: 32px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .verdict-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8B6914;
+    margin-bottom: 8px;
+  }
+
+  .verdict p { margin-bottom: 0; font-size: 16px; }
+
+  /* DATA TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+  }
+
+  .data-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 10px 12px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .data-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .data-table tbody tr:hover { background: rgba(0,0,0,0.03); }
+
+  .data-table td {
+    padding: 10px 12px;
+    vertical-align: middle;
+  }
+
+  .data-table .country { font-weight: 600; }
+
+  .gap-high { color: var(--accent); font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+  .gap-low { color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .num { font-family: 'JetBrains Mono', monospace; }
+
+  .india-row { background: rgba(255, 102, 0, 0.06); }
+
+  /* CHART EMBED */
+  .chart-container {
+    margin: 36px 0;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .chart-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 16px;
+    background: white;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .chart-container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    display: block;
+  }
+
+  /* PULLQUOTE */
+  blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--ink);
+    border-left: 4px solid var(--orange);
+    padding: 8px 24px;
+    margin: 36px 0;
+  }
+
+  /* METHODOLOGY */
+  .methodology {
+    background: white;
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    margin: 40px 0;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+
+  .methodology h3 { margin-top: 0; }
+  .methodology ul { padding-left: 20px; }
+  .methodology li { margin-bottom: 6px; }
+
+  /* FOOTER */
+  footer {
+    border-top: 3px solid var(--ink);
+    padding: 32px 24px;
+    text-align: center;
+    background: var(--ink);
+    color: var(--paper);
+    margin-top: 60px;
+  }
+
+  footer .footer-pub {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  footer .footer-pub span { color: var(--accent); }
+
+  footer p {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+
+  footer a { color: #aaa; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .article { padding: 32px 16px 60px; }
+    .data-table { font-size: 13px; }
+    .chart-container iframe { height: 380px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-pub">Data Journalism</div>
+  <div class="masthead-name">The Data <span>Desk</span></div>
+  <div class="masthead-tagline">Where every viral claim meets a spreadsheet</div>
+</header>
+
+<article class="article">
+
+  <div class="label">Fact Check</div>
+
+  <h1>Is India Really Growing at <em>7.7%</em>?</h1>
+
+  <p class="deck">A viral infographic reached millions claiming India leads the world at 7.7% GDP growth. We checked every number against IMF data. Here's what the chart got right — and what it quietly got wrong.</p>
+
+  <div class="byline">
+    By <strong>Salim Arshad</strong> &nbsp;·&nbsp; The Data Desk &nbsp;·&nbsp; June 2025 &nbsp;·&nbsp;
+    Source: IMF World Economic Outlook, April 2025
+  </div>
+
+  <p>It had everything a viral graphic needs. A bold headline. An orange bar towering over every other country. Eighteen national flags. And a number — <strong>7.70%</strong> — printed in confident precision next to India's name.</p>
+
+  <p>"UNSTOPPABLE INDIA," it declared. "India Powers Ahead with 7.7% Growth. Remains the Brightest Spot in Global Economy."</p>
+
+  <p>The graphic, citing "MoSPI, Media Reports" as its source, was shared by politicians, news channels, and millions of ordinary citizens. It felt true. It looked authoritative. But how accurate were those numbers?</p>
+
+  <div class="viral-box">
+    <div class="viral-headline">UNSTOPPABLE INDIA</div>
+    <div class="viral-sub">India Powers Ahead with 7.7% Growth<br>Remains the Brightest Spot in Global Economy</div>
+    <div class="viral-source">Source: MoSPI, Media Reports &nbsp;|&nbsp; FY26 GDP Growth Rate (%)</div>
+  </div>
+
+  <p>We ran every figure through the IMF's World Economic Outlook database — the gold standard for cross-country GDP comparisons — and the picture that emerged is more complicated than a single orange bar suggests.</p>
+
+  <h2>What the IMF Actually Says</h2>
+
+  <p>Let's start with the good news: <strong>India is genuinely the fastest-growing major economy in 2025.</strong> The IMF's April 2025 forecast puts India's growth at 7.618% — still the highest among the 10 economies in the viral chart, still comfortably ahead of China (4.959%) and Malaysia (5.171%).</p>
+
+  <p>India's growth story is real. It survived a devastating COVID crash in 2020 (-5.8%), staged a dramatic V-shaped recovery in 2021 (+9.7%), and has maintained sustained growth through 2022–2026. That trajectory is genuinely impressive and doesn't need embellishment.</p>
+
+  <div class="chart-container">
+    <div class="chart-label">📊 Interactive Dashboard — The Data Desk</div>
+    <iframe src="https://public.tableau.com/views/India_GDP_Factcheck/TheDataDeskIndiaGDPFactCheck?:language=en-US&:display_count=n&:origin=viz_share_link&:showVizHome=no&:embed=true" allowfullscreen></iframe>
+  </div>
+
+  <h2>Where the Numbers Diverge</h2>
+
+  <p>The problems appear when you examine the other countries in the chart — particularly the United States and Brazil.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Viral Claim</th>
+        <th>IMF Actual</th>
+        <th>Gap</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="india-row">
+        <td class="country">🇮🇳 India</td>
+        <td class="num">7.700%</td>
+        <td class="num">7.618%</td>
+        <td class="gap-low">+0.08%</td>
+      </tr>
+      <tr>
+        <td class="country">🇲🇾 Malaysia</td>
+        <td class="num">5.200%</td>
+        <td class="num">5.171%</td>
+        <td class="gap-low">+0.03%</td>
+      </tr>
+      <tr>
+        <td class="country">🇮🇩 Indonesia</td>
+        <td class="num">5.100%</td>
+        <td class="num">5.108%</td>
+        <td class="gap-low">-0.01%</td>
+      </tr>
+      <tr>
+        <td class="country">🇨🇳 China</td>
+        <td class="num">5.000%</td>
+        <td class="num">4.959%</td>
+        <td class="gap-low">+0.04%</td>
+      </tr>
+      <tr>
+        <td class="country">🇧🇷 Brazil</td>
+        <td class="num">3.500%</td>
+        <td class="num">2.286%</td>
+        <td class="gap-high">+1.21% ⚠</td>
+      </tr>
+      <tr>
+        <td class="country">🇺🇸 United States</td>
+        <td class="num">2.800%</td>
+        <td class="num">2.117%</td>
+        <td class="gap-high">+0.68% ⚠</td>
+      </tr>
+      <tr>
+        <td class="country">🇬🇧 United Kingdom</td>
+        <td class="num">1.500%</td>
+        <td class="num">1.323%</td>
+        <td class="gap-low">+0.18%</td>
+      </tr>
+      <tr>
+        <td class="country">🇯🇵 Japan</td>
+        <td class="num">1.200%</td>
+        <td class="num">1.193%</td>
+        <td class="gap-low">+0.01%</td>
+      </tr>
+      <tr>
+        <td class="country">🇫🇷 France</td>
+        <td class="num">0.900%</td>
+        <td class="num">0.928%</td>
+        <td class="gap-low">-0.03%</td>
+      </tr>
+      <tr>
+        <td class="country">🇩🇪 Germany</td>
+        <td class="num">0.200%</td>
+        <td class="num">0.240%</td>
+        <td class="gap-low">-0.04%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Brazil's figure is overstated by <strong>1.21 percentage points</strong> — more than a third of its actual growth rate. The United States figure is inflated by <strong>0.68 percentage points</strong>. These are not rounding errors.</p>
+
+  <blockquote>"India's growth story is real. It doesn't need other countries' numbers to be inflated to make it look better."</blockquote>
+
+  <h2>The Methodology Problem</h2>
+
+  <p>The viral chart's source reads: "MoSPI, Media Reports." This matters more than it might seem.</p>
+
+  <p>India's 7.7% figure comes from MoSPI's advance estimate for fiscal year 2025-26 (April 2025 to March 2026). The IMF's 7.618% figure is a calendar year 2025 forecast. These are measuring <em>different time periods</em> — which partly explains the small gap for India.</p>
+
+  <p>But here's the problem: the other countries in the chart don't have a MoSPI equivalent. They're almost certainly pulled from different sources — possibly older IMF estimates, media reports, or simply rounded figures — without any disclosure of which source applies to which country.</p>
+
+  <p>Mixing methodologies without disclosure is how well-intentioned infographics become misinformation.</p>
+
+  <div class="verdict">
+    <div class="verdict-label">⚖ Verdict</div>
+    <p><strong>Partly True.</strong> India is genuinely the fastest-growing major economy and its 7.7% figure is close to IMF's 7.618% (different methodologies). However, the USA (+0.68%) and Brazil (+1.21%) figures are significantly overstated, and the chart mixes data sources without disclosure. India's real growth story needs no embellishment.</p>
+  </div>
+
+  <h2>India's Real Story Is Better Than the Viral Version</h2>
+
+  <p>The most compelling part of India's growth story isn't the 2025 snapshot — it's the full journey. In 2020, India's economy contracted by 5.8%, one of the worst crashes among major economies. By 2021, it had bounced back 9.7% — a textbook V-shaped recovery. Since then, it has maintained growth between 6.5% and 8% consistently.</p>
+
+  <p>That 2019-to-2027 arc — crash, recovery, sustained growth — is a genuinely remarkable economic story. It's the story the viral chart should have told, instead of quietly inflating other countries' numbers.</p>
+
+  <div class="methodology">
+    <h3>📋 Methodology</h3>
+    <ul>
+      <li><strong>Primary source:</strong> IMF World Economic Outlook, April 2025 edition</li>
+      <li><strong>Coverage:</strong> 10 countries featured in the viral infographic</li>
+      <li><strong>India note:</strong> IMF figure (7.618%) is calendar year 2025 forecast; viral chart figure (7.7%) is MoSPI's FY2025-26 advance estimate — different fiscal periods</li>
+      <li><strong>Visualization:</strong> Built in Tableau Public using calculated fields to preserve original claimed values alongside IMF actuals</li>
+      <li><strong>Data file:</strong> Available on GitHub — github.com/salimarshad07</li>
+    </ul>
+  </div>
+
+  <p style="font-size:14px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 20px; margin-top: 40px;">
+    <strong>About The Data Desk:</strong> A data journalism project by Salim Arshad examining viral claims, public data, and the numbers behind the headlines.
+    &nbsp;·&nbsp; <a href="https://public.tableau.com/views/India_GDP_Factcheck/TheDataDeskIndiaGDPFactCheck" style="color: var(--accent);">Interactive Dashboard</a>
+    &nbsp;·&nbsp; <a href="https://github.com/salimarshad07" style="color: var(--accent);">GitHub</a>
+    &nbsp;·&nbsp; <a href="https://salim-portfolio-amber.vercel.app" style="color: var(--accent);">Portfolio</a>
+  </p>
+
+</article>
+
+<footer>
+  <div class="footer-pub">The Data <span>Desk</span></div>
+  <p>Where every viral claim meets a spreadsheet.</p>
+  <p>By Salim Arshad &nbsp;·&nbsp; <a href="https://salim-portfolio-amber.vercel.app">salim-portfolio-amber.vercel.app</a></p>
+</footer>
+
+</body>
+</html>
